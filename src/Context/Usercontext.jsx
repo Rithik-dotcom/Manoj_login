@@ -12,7 +12,7 @@ export const UserContext = createContext({
     userData: [],
     setUserData: () => [],
 })
-//  localStorage.clear();
+ // localStorage.clear();
 
 //provider provides the access to the data in user-context
 // the children will have access to the data using provider 

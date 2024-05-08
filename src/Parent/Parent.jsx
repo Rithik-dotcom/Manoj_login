@@ -13,7 +13,6 @@ import Signup from '../Forms/Signup';
 const Parent = () => {
 
     const { loggedIn } = useContext(UserContext);
-    console.log(loggedIn)
 
 
     return (
@@ -24,10 +23,14 @@ const Parent = () => {
                 {loggedIn ? 
                 <Routes>
                     <Route path='/' element={<App />} />
+                    <Route path='/signup' element={<App />} />
                     <Route path='*' element={<h1>Not Found</h1>} />
+                    <Route path='/login' element={<Login />} />
                 </Routes> :
                     <Routes>
-                        <Route path='*' element={<Login />} />
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/' element={<Login />} />
+                        <Route path='/signup' element={<Signup />} />
                     </Routes>
                     }
             </BrowserRouter>

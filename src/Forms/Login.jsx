@@ -33,7 +33,7 @@ const Login = () => {
             //     .oneOf([Yup.ref('password'), null], 'Passwords must match')
         }),
         onSubmit: values => {
-
+values.preventDefault();
             alert(JSON.stringify(values, null, 2));
             let user = JSON.stringify(values, null, 2);
             setCurrentUser(user);
@@ -41,7 +41,7 @@ const Login = () => {
 
 
             const userDataArray = userData.map(user => JSON.parse(user));
-
+console.log(userDataArray)
             // Access the "firstName" value from each object
             function check() {
                 const foundUser = userDataArray.find(user => user.email === values.email);
@@ -68,7 +68,7 @@ const Login = () => {
             //   }
 
 
-            formik.resetForm();
+            // formik.resetForm();
 
         },
     });
@@ -114,7 +114,7 @@ const Login = () => {
                     </div>
 
                     <button type="submit">
-                        <a>
+                        <a href='/login'>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -124,7 +124,7 @@ const Login = () => {
                     </button>
                     <p>
                         Don't have an account?
-                        <a href="/Signup">Sign up here</a>
+                        <a href="/signup">Sign up here</a>
                     </p>
                 </form>
             </div>
