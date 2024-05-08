@@ -3,7 +3,7 @@
 import React, { useContext } from 'react'
 import './Login.css';
 import { UserContext } from '../Context/Usercontext';
-// import { Link } from 'react-router-dom';
+
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -15,11 +15,10 @@ const Login = () => {
 
     const formik = useFormik({
         initialValues: {
-            // firstName: '',
-            // lastName: '',
+          
             email: '',
             password: '',
-            // passwordConfirmation: '',
+        
         },
 
         validationSchema: Yup.object({
